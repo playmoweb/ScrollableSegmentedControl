@@ -93,7 +93,7 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
     fileprivate var normalAttributes:[NSAttributedString.Key : Any]?
     fileprivate var highlightedAttributes:[NSAttributedString.Key : Any]?
     fileprivate var selectedAttributes:[NSAttributedString.Key : Any]?
-    fileprivate var _titleAttributes:[UInt: [NSAttributedString.Key : Any]] = [UInt: [NSAttributedStringKey : Any]]()
+    fileprivate var _titleAttributes:[UInt: [NSAttributedString.Key : Any]] = [UInt: [NSAttributedString.Key : Any]]()
     @objc public func setTitleTextAttributes(_ attributes: [NSAttributedString.Key : Any]?, for state: UIControl.State) {
         _titleAttributes[state.rawValue] = attributes
         
@@ -317,7 +317,7 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
         } else if selectedAttributes != nil {
             fontAttributes = selectedAttributes!
         } else {
-            fontAttributes =  [NSAttributedStringKey.font: BaseSegmentCollectionViewCell.defaultFont]
+            fontAttributes =  [NSAttributedString.Key.font: BaseSegmentCollectionViewCell.defaultFont]
         }
         
         let size = (text as NSString).size(withAttributes: fontAttributes)
